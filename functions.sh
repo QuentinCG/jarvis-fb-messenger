@@ -23,7 +23,7 @@ jv_pg_fb_send_message()
 {
   # Send message
   local dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-  local result=`python3 $dir/script/fb_messenger_send.py --user "$var_jv_pg_fb_email" --password "$var_jv_pg_fb_password" --receiver "$1" --message "$3" --image "$4"`
+  local result=`python3 $dir/script/fb_messenger_send.py --email "$var_jv_pg_fb_email" --password "$var_jv_pg_fb_password" --receiver "$1" --message "$3" --image "$4"`
 
   # Show the result to user (if requested)
   if [[ $? -eq 0 ]]; then
