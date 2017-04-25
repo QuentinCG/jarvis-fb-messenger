@@ -1,1 +1,1 @@
-*HELLO WORLD*==say "Hello World"
+*ENVOI*MESSAGE*FACEBOOK*EXEMPLE*==jv_pg_fb_send_message "xxxxxxxxxxxx" "Quentin" "Ceci est un petit message" "plugins_installed/jarvis-fb-messenger/presentation.png"
