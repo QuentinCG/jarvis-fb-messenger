@@ -21,3 +21,6 @@
 # Install fbchat (needed for the jarvis-facebook messenger python script)
 sudo pip2.7 install fbchat
 sudo pip3 install fbchat
+
+# Copy latest version of "facebook messenger sender" python script
+wget -P script/ https://raw.githubusercontent.com/QuentinCG/Base-Scripts/master/OS_Independent/utils/fb_messenger_send.py
