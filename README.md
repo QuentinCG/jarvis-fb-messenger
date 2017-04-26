@@ -10,15 +10,7 @@ Speak with Jarvis (Raspberry) using Facebook Messenger app.
 
 You can use this plugin to communicate with Jarvis through the facebook messenger apps or directly though the facebook website:
 
-
-Basic communication:
-
-<img src="https://raw.githubusercontent.com/QuentinCG/jarvis-fb-messenger/master/example_base.png" width="200">
-
-
-Help and fail requests:
-
-<img src="https://raw.githubusercontent.com/QuentinCG/jarvis-fb-messenger/master/example_help.png" width="200">
+<img src="https://raw.githubusercontent.com/QuentinCG/jarvis-fb-messenger/master/example_base.png" width="500">
 
 
 ### Used to send message and image to facebook user
