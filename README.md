@@ -9,8 +9,16 @@ Speak with Jarvis (Raspberry) using Facebook Messenger app.
 ### Used as a normal chat app
 
 You can use this plugin to communicate with Jarvis through the facebook messenger apps or directly though the facebook website:
-<img src="https://raw.githubusercontent.com/QuentinCG/jarvis-fb-messenger/master/example_base.png" width="600">
-<img src="https://raw.githubusercontent.com/QuentinCG/jarvis-fb-messenger/master/example_help.png" width="600">
+
+
+Basic communication:
+
+<img src="https://raw.githubusercontent.com/QuentinCG/jarvis-fb-messenger/master/example_base.png" width="200">
+
+
+Help and fail requests:
+
+<img src="https://raw.githubusercontent.com/QuentinCG/jarvis-fb-messenger/master/example_help.png" width="200">
 
 
 ### Used to send message and image to facebook user
@@ -19,7 +27,7 @@ You can use this plugin to communicate with Jarvis through the facebook messenge
 You: Envoi un message facebook à XXXX
 Jarvis: Message facebook envoyé à XXXX
 ```
-<img src="https://raw.githubusercontent.com/QuentinCG/jarvis-fb-messenger/master/example_send_message.png" width="600">
+<img src="https://raw.githubusercontent.com/QuentinCG/jarvis-fb-messenger/master/example_send_message.png" width="200">
 
 
 ## How to install
@@ -30,7 +38,7 @@ Jarvis: Message facebook envoyé à XXXX
 
 3) Add this plugin in <a target="_blank" href="http://domotiquefacile.fr/jarvis/content/plugins">Jarvis project</a>
 
-4) Configure the <a target="_blank" href="https://github.com/QuentinCG/jarvis-dropbox/blob/master/config.sh">configuration file</a> to match your requirements: You need to specify your facebook Jarvis email address, password and some other options.
+4) Configure the <a target="_blank" href="https://github.com/QuentinCG/jarvis-fb-messenger/blob/master/config.sh">configuration file</a> to match your requirements: You need to specify your facebook Jarvis email address, password and some other options.
 Note that to get facebook ID, just try to send a message from messenger to Jarvis and wait him to say that you don't have right to speak to him and giving you your ID).
 
 5) Enjoy
