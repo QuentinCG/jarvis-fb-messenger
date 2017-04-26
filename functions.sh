@@ -8,8 +8,7 @@ jv_pg_fb_start()
 
   # Start the server
   local dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-  nohup python3 $dir/script/facebook_server.py --email "$var_jv_pg_fb_email" --password "$var_jv_pg_fb_password" --verbose "$var_jv_pg_fb_verbose" --mute "$var_jv_pg_fb_mute" --getId "$var_jv_pg_fb_getId" >/dev/null 2>/dev/stdout & 
-  #TODO: Add those options: --allowControlAll "$var_jv_pg_fb_allow_all_control" --allowedIds "$var_jv_pg_fb_allowed_people_ids"
+  nohup python3 $dir/script/facebook_server.py --email "$var_jv_pg_fb_email" --password "$var_jv_pg_fb_password" --verbose "$var_jv_pg_fb_verbose" --mute "$var_jv_pg_fb_mute" --getId "$var_jv_pg_fb_getId" --allowAll "$var_jv_pg_fb_allow_control_to_all" --allowedIdList "$var_jv_pg_fb_allowed_people_ids" >/dev/null 2>/dev/stdout &
 }
 
 # Send message and/or image via Facebook Messenger
