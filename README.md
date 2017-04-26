@@ -19,7 +19,7 @@ You can use this plugin to communicate with Jarvis through the facebook messenge
 You: Envoi un message facebook à XXXX
 Jarvis: Message facebook envoyé à XXXX
 ```
-<img src="https://raw.githubusercontent.com/QuentinCG/jarvis-fb-messenger/master/example_send_message.png" width="200">
+<img src="https://raw.githubusercontent.com/QuentinCG/jarvis-fb-messenger/master/example_send_message.png" width="250">
 
 
 ## How to install
