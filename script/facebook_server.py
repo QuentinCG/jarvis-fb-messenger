@@ -12,7 +12,7 @@ import unicodedata # Normalized string
 import ast
 
 class JarvisFacebookMessengerServer(fbchat.Client):
-  def __init__(self, email, password, verbose=True, mute=True, getId=False, allowAll=True, allowAll = True, allowedIdList = []):
+  def __init__(self, email, password, verbose=True, mute=True, getId=False, allowAll=True, allowedIdList = []):
     logging.debug("Initializing Facebook messenger server with email '{}', getId='{}', verbose='{}',  mute='{}', allowAll='{}' and allowedList='{}'.".format(str(email), str(getId), str(verbose), str(mute), str(allowAll), str(allowedIdList)))
 
     # Launch the Facebook messenger server
