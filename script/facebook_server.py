@@ -97,35 +97,30 @@ if __name__ == "__main__":
     else:
       raise argparse.ArgumentTypeError('Boolean value expected.')
 
+  # Parse received parameters
   parser = argparse.ArgumentParser(description='Jarvis Facebook Messenger Server')
   parser.add_argument('-e', '--email', help='Facebook email used as username')
   parser.add_argument('-p', '--password', help='Facebook password')
   parser.add_argument('-v', '--verbose', type=__str2bool, nargs='?', default="True", help='Show debug information (default: True)')
   parser.add_argument('-m', '--mute', type=__str2bool, nargs='?', default="True", help='Mute Jarvis (default: True)')
   parser.add_argument('-i', '--getId', type=__str2bool, nargs='?', default="False", help='Get ID of the sender (default: False)')
-
   args = parser.parse_args()
 
+  # Show more information if in debug mode
   if args.verbose:
     logger = logging.getLogger()
     logger.setLevel(logging.DEBUG)
 
+  # Create a Jarvis-Facebook messenger server instance
   jarvis_fb_server = JarvisFacebookMessengerServer(email = args.email,
                                                    password = args.password,
                                                    verbose = args.verbose,
                                                    mute = args.mute,
                                                    getId = args.getId)
-  try:
-    #for sig in [signal.SIGTERM, signal.SIGINT, signal.SIGHUP, signal.SIGQUIT]:
-    #  signal.signal(sig, proper_exit)
 
-    # Listen facebook messenger message forever
-    jarvis_fb_server.listen()
-  #except socket.error, msg:
-  #  print("ERROR: '{}'.".format(msg))
-  #  sys.exit(1)
-  except KeyboardInterrupt:
-    # TODO: Improve
-    jarvis_fb_server.proper_exit(0, 0)
-    print() # New line
-    pass
+  # Add signals catching to quit application when jarvis ends
+  for sig in [signal.SIGTERM, signal.SIGINT, signal.SIGHUP, signal.SIGQUIT]:
+    signal.signal(sig, jarvis_fb_server.proper_exit)
+
+  # Listen facebook messenger message forever (until jarvis ends)
+  jarvis_fb_server.listen()
