@@ -28,7 +28,7 @@ Jarvis: Message facebook envoyé à XXXX
 
 2) Add this facebook account as friend to your main facebook account.
 
-3) Add this plugin in <a target="_blank" href="http://domotiquefacile.fr/jarvis/content/plugins">Jarvis project</a>
+3) Add this plugin in <a target="_blank" href="http://domotiquefacile.fr/jarvis/content/plugins">Jarvis project</a> (the install can take up to 35 minutes).
 
 4) Configure the <a target="_blank" href="https://github.com/QuentinCG/jarvis-fb-messenger/blob/master/config.sh">configuration file</a> to match your requirements: You need to specify your facebook Jarvis email address, password and some other options.
 Note that to get facebook ID, just try to send a message from messenger to Jarvis and wait him to say that you don't have right to speak to him and giving you your ID).
