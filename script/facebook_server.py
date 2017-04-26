@@ -66,8 +66,8 @@ class JarvisFacebookMessengerServer(fbchat.Client):
       self.markAsRead(author_id)
 
       # Be sure that the author is allowed
-      if not allowAll:
-        if not (str(author_id) in allowedIdList):
+      if not self.allowAll:
+        if not (str(author_id) in self.allowedIdList):
           self.send(author_id, "You don't have right to speak to Jarvis! (Your ID is {})".format(str(author_id)))
           logging.warning("Not allowed user '{}' tried to speak to Jarvis.".format(str(author_id)))
           return
