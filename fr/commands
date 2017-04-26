@@ -1,1 +1,1 @@
-*ENVOI*MESSAGE*FACEBOOK*EXEMPLE*==jv_pg_fb_send_message "xxxxxxxxxxxx" "Quentin" "Ceci est un petit message" "plugins_installed/jarvis-fb-messenger/presentation.png"
+*ENVOI*MESSAGE*FACEBOOK*==jv_pg_fb_send_message "$var_jv_pg_fb_main_receiver_id" "$var_jv_pg_fb_main_receiver_name" "Ceci est un petit message avec une image" "plugins_installed/jarvis-fb-messenger/presentation.png"
