@@ -1,10 +1,6 @@
 #!/usr/bin/env bash
-# If a problem occurs during the install,
-# consider adding "deb http://http.us.debian.org/debian/ testing non-free contrib main" to "/etc/apt/sources.list"
-# and then do a "sudo apt-get update && sudo apt-get upgrade"
-# and start the install again
 
-# Install Python (python 3.x)
+# Install Python (Python 3.x)
 [[ -z $(which python) ]] && sudo apt-get --yes --force-yes install python
 [[ -z $(which python3) ]] && sudo apt-get --yes --force-yes install python3
 #[[ -z $(which python2.7) ]] && sudo apt-get --yes --force-yes install python2.7
@@ -14,9 +10,14 @@
 [[ -z $(which python3-pip) ]] && sudo apt-get --yes --force-yes install python3-pip
 
 # Install libs used by fbchat (this may take some time since it needs to build libs)
+# All those libs are used to build lxml which is used by fbchat
+# More information here: http://stackoverflow.com/questions/5178416/pip-install-lxml-error
 [[ -z $(which libxml2-dev) ]] && sudo apt-get --yes --force-yes install libxml2-dev
 [[ -z $(which libxslt1-dev) ]] && sudo apt-get --yes --force-yes install libxslt1-dev
 [[ -z $(which libxml2) ]] && sudo apt-get --yes --force-yes install libxml2
+[[ -z $(which python-dev) ]] && sudo apt-get --yes --force-yes install python-dev
+[[ -z $(which python3-dev) ]] && sudo apt-get --yes --force-yes install python3-dev
+[[ -z $(which zlib1g-dev) ]] && sudo apt-get --yes --force-yes install zlib1g-dev
 
 # Install fbchat (needed for the jarvis-facebook messenger python script)
 sudo pip3 install fbchat
