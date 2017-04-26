@@ -1,5 +1,5 @@
 ## Description
-Speak with Jarvis (Raspberry) using Facebook Messenger app.
+Speak with Jarvis assistant using Facebook Messenger app.
 
 <img src="https://raw.githubusercontent.com/QuentinCG/jarvis-fb-messenger/master/presentation.png" width="150">
 
