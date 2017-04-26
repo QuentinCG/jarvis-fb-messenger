@@ -6,4 +6,4 @@ var_jv_pg_fb_getId="True" # Send sender ID back to user which sent a message (us
 
 # Not used yet:
 var_jv_pg_fb_allow_control_to_all="True" # Allow all people to control Jarvis (True/False)
-var_jv_pg_fb_allowed_people_ids="[\"id_1_here\", \"id_2_here\", \"id_3_here\", \"...\""]" # List of allowed people (facebook IDs) to control Jarvis
+var_jv_pg_fb_allowed_people_ids="[\"id_1_here\", \"id_2_here\", \"id_3_here\", \"...\"]" # List of allowed people (facebook IDs) to control Jarvis
