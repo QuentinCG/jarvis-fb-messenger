@@ -137,18 +137,28 @@ if __name__ == "__main__":
     logger = logging.getLogger()
     logger.setLevel(logging.DEBUG)
 
-  # Create a Jarvis-Facebook messenger server instance
-  jarvis_fb_server = JarvisFacebookMessengerServer(email = args.email,
-                                                   password = args.password,
-                                                   verbose = args.verbose,
-                                                   mute = args.mute,
-                                                   getId = args.getId,
-                                                   allowAll = args.allowAll,
-                                                   allowedIdList = ast.literal_eval(args.allowedIdList))
+  while True:
+    # Create a Jarvis-Facebook messenger server instance
+    jarvis_fb_server = JarvisFacebookMessengerServer(email = args.email,
+                                                     password = args.password,
+                                                     verbose = args.verbose,
+                                                     mute = args.mute,
+                                                     getId = args.getId,
+                                                     allowAll = args.allowAll,
+                                                     allowedIdList = ast.literal_eval(args.allowedIdList))
+    # Add signals catching to quit application when jarvis ends
+    for sig in [signal.SIGTERM, signal.SIGINT, signal.SIGHUP, signal.SIGQUIT]:
+      signal.signal(sig, jarvis_fb_server.properExit)
 
-  # Add signals catching to quit application when jarvis ends
-  for sig in [signal.SIGTERM, signal.SIGINT, signal.SIGHUP, signal.SIGQUIT]:
-    signal.signal(sig, jarvis_fb_server.properExit)
-
-  # Listen facebook messenger message forever (until jarvis ends)
-  jarvis_fb_server.listen()
+    try:
+      # Listen facebook messenger message forever (until jarvis ends)
+      jarvis_fb_server.listen()
+    except KeyboardInterrupt:
+      pass
+    except Exception as e:
+      # Restart Facebook Server in case an error occurs
+      del jarvis_fb_server
+      try:
+        logging.error(e.message)
+      except Exception:
+        pass
