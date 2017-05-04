@@ -8,9 +8,13 @@ jv_pg_fb_start()
 
   # Start the server
   local dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-  nohup python3 $dir/script/facebook_server.py --email "$var_jv_pg_fb_email" --password "$var_jv_pg_fb_password" --verbose "$var_jv_pg_fb_verbose" --mute "$var_jv_pg_fb_mute" --getId "$var_jv_pg_fb_getId" --allowAll "$var_jv_pg_fb_allow_control_to_all" --allowedIdList "$var_jv_pg_fb_allowed_people_ids" >/dev/null 2>/dev/stdout &
-}
 
+  if [ $var_jv_pg_fb_verbose = "True" ]; then
+    python3 $dir/script/facebook_server.py --email "$var_jv_pg_fb_email" --password "$var_jv_pg_fb_password" --verbose "$var_jv_pg_fb_verbose" --mute "$var_jv_pg_fb_mute" --getId "$var_jv_pg_fb_getId" --allowAll "$var_jv_pg_fb_allow_control_to_all" --allowedIdList "$var_jv_pg_fb_allowed_people_ids" &
+  else
+    nohup python3 $dir/script/facebook_server.py --email "$var_jv_pg_fb_email" --password "$var_jv_pg_fb_password" --verbose "$var_jv_pg_fb_verbose" --mute "$var_jv_pg_fb_mute" --getId "$var_jv_pg_fb_getId" --allowAll "$var_jv_pg_fb_allow_control_to_all" --allowedIdList "$var_jv_pg_fb_allowed_people_ids" >/dev/null 2>/dev/stdout &
+  fi
+}
 # Send message and/or image via Facebook Messenger
 # $1 (string): ID of the user to send message
 # $2 (string): Name of the user to send message
