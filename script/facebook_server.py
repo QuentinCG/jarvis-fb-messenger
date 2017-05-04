@@ -52,7 +52,7 @@ class JarvisFacebookMessengerServer(fbchat.Client):
 
   def properExit(self, signum, frame):
     # Exit the class properly
-    logging.debug("Stopping Jarvis Facebook Messenger server.")
+    print("Stopping Jarvis Facebook Messenger server.")
     self.stop_listening()
     sys.exit(0)
 
