@@ -49,7 +49,7 @@ class JarvisFacebookMessengerServer(fbchat.Client):
   def executeOrder(self, phrase):
     # Say something to Jarvis
 
-    # Don't send empty order to Jarvis (useless and risly)
+    # Don't send empty order to Jarvis (useless and risky)
     if phrase == "":
       return list()
 
