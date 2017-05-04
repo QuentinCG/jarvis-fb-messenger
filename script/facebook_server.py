@@ -50,7 +50,7 @@ class JarvisFacebookMessengerServer(fbchat.Client):
     # Say something to Jarvis
     return list(json.loads(self._exec([str("-x"), str(phrase)]).decode('utf-8'), strict=False))
 
-  def proper_exit(signum, frame):
+  def properExit(self, signum, frame):
     # Exit the class properly
     logging.debug("Stopping Jarvis Facebook Messenger server.")
     self.stop_listening()
@@ -134,7 +134,7 @@ if __name__ == "__main__":
 
   # Add signals catching to quit application when jarvis ends
   for sig in [signal.SIGTERM, signal.SIGINT, signal.SIGHUP, signal.SIGQUIT]:
-    signal.signal(sig, jarvis_fb_server.proper_exit)
+    signal.signal(sig, jarvis_fb_server.properExit)
 
   # Listen facebook messenger message forever (until jarvis ends)
   jarvis_fb_server.listen()
