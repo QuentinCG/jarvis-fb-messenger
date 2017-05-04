@@ -89,13 +89,21 @@ class JarvisFacebookMessengerServer(fbchat.Client):
 
       # ... and respond to user with Jarvis response
       try:
+        # Prepare the Jarvis response to the sender
+        response_to_send = ""
         for json_dict in list(response):
           for key, value in json_dict.items():
-            # Send Jarvis response to the sender
+            if response_to_send != "":
+              response_to_send += "\n"
+
             if self.verbose_mode:
-              self.send(author_id, "{}: {}".format(str(key), str(value)))
+              response_to_send += "{}: {}".format(str(key), str(value))
             else:
-              self.send(author_id, str(value))
+              response_to_send += str(value)
+
+        # Send Jarvis response to the sender
+        if response_to_send != "":
+          self.send(author_id, str(response_to_send))
       except ValueError:
         self.send(author_id, "Can't parse Jarvis response: '{}'".format(str(response)))
 
