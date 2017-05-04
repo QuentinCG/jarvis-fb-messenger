@@ -48,6 +48,12 @@ class JarvisFacebookMessengerServer(fbchat.Client):
 
   def executeOrder(self, phrase):
     # Say something to Jarvis
+
+    # Don't send empty order to Jarvis (useless and risly)
+    if phrase == "":
+      return list()
+
+    # Send order to Jarvis
     return list(json.loads(self._exec([str("-x"), str(phrase)]).decode('utf-8'), strict=False))
 
   def properExit(self, signum, frame):
