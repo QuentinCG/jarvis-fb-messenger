@@ -53,7 +53,12 @@ class JarvisFacebookMessengerServer(fbchat.Client):
       return list()
 
     # Send order to Jarvis
-    return list(json.loads(self._exec([str("-x"), str(phrase)]).decode('utf-8'), strict=False))
+    result_from_request = self._exec([str("-x"), str(phrase)]).decode('utf-8')
+    try:
+      return list(json.loads(result_from_request, strict=False))
+    except ValueError:
+      logging.warning("Can't parse '{}'".format(str(result_from_request)))
+      return list()
 
   def properExit(self, signum, frame):
     # Exit the class properly
