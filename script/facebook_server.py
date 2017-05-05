@@ -23,7 +23,6 @@ class JarvisFacebookMessengerServer(fbchat.Client):
 
     # Define the command line base to communicate with Jarvis with JSON
     self.program = [os.path.join(".", "jarvis.sh"), "-j"]
-    #self.program = [os.path.join(str("."), str("/home/quecg/jarvis/jarvis.sh")), str("-j")]
 
     # Initialize verbose and muted options
     self.mute_mode = mute
