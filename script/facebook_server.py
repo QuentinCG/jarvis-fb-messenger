@@ -64,6 +64,7 @@ class JarvisFacebookMessengerServer(fbchat.Client):
     # Exit the class properly
     print("Stopping Jarvis Facebook Messenger server.")
     self.stop_listening()
+    self.logout()
     sys.exit(0)
 
   def on_message(self, mid, author_id, author_name, message, metadata):
@@ -161,8 +162,11 @@ if __name__ == "__main__":
       pass
     except Exception as e:
       # Restart Facebook Server in case an error occurs
-      del jarvis_fb_server
+      logging.warning("Facebook Messenger server crashed. Restarting...")
       try:
         logging.error(e.message)
       except Exception:
         pass
+      jarvis_fb_server.stop_listening()
+      jarvis_fb_server.logout()
+      del jarvis_fb_server
