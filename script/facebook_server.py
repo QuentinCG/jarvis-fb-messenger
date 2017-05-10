@@ -43,7 +43,14 @@ class JarvisFacebookMessengerServer(fbchat.Client):
 
     logging.debug("Sending command '{}' to Jarvis.".format(str(command)))
 
-    return check_output(command)
+    # Get response from Jarvis
+    output = ""
+    try:
+      output = check_output(command)
+    except CalledProcessError:
+      pass
+
+    return output
 
   def executeOrder(self, phrase):
     # Say something to Jarvis
