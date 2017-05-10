@@ -11,6 +11,5 @@ var_jv_pg_fb_main_receiver_id="YOUR RECEIVER ID HERE" # User which will receive 
 var_jv_pg_fb_main_receiver_name="YOUR RECEIVER NAME HERE"
 
 # Optional configuration
-var_jv_pg_fb_verbose="True" # Have verbose information (True/False)
 var_jv_pg_fb_mute="True" # Speak with Jarvis without sound (True/False)
 var_jv_pg_fb_getId="False" # Send sender ID back to user which sent a message (useful to get list of people to allow later with var_jv_pg_fb_allowed_people_ids)
