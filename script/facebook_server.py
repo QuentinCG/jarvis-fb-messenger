@@ -20,6 +20,7 @@ class JarvisFacebookMessengerServer(fbchat.Client):
       fbchat.Client.__init__(self, email, password, verbose)
     except Exception:
       logging.error("Login failed, check email/password.")
+      sys.exit(2)
 
     # Define the command line base to communicate with Jarvis with JSON
     self.program = [os.path.join(".", "jarvis.sh"), "-j"]
