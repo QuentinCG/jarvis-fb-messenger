@@ -6,8 +6,8 @@
 #[[ -z $(which python2.7) ]] && sudo apt-get --yes --force-yes install python2.7
 
 # Install pip
-[[ -z $(which python-pip) ]] && sudo apt-get --yes --force-yes install python-pip
-[[ -z $(which python3-pip) ]] && sudo apt-get --yes --force-yes install python3-pip
+[[ -z $(which pip) ]] && sudo apt-get --yes --force-yes install python-pip
+[[ -z $(which pip3) ]] && sudo apt-get --yes --force-yes install python3-pip
 
 # Install libs used by fbchat (this may take some time since it needs to build libs)
 # All those libs are used to build lxml which is used by fbchat
