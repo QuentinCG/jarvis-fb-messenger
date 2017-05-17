@@ -16,9 +16,16 @@ You can use this plugin to communicate with <a target="_blank" href="http://domo
 ### Used to send message and image to facebook user
 
 ```
+(English)
+You: Send a facebook message to XXXX
+Jarvis: Facebook message sent to XXXX
+
+(French)
 You: Envoi un message facebook à XXXX
 Jarvis: Message facebook envoyé à XXXX
 ```
+
+
 <img src="https://raw.githubusercontent.com/QuentinCG/jarvis-fb-messenger/master/example_send_message.png" width="250">
 
 

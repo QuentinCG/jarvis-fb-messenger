@@ -1,0 +1,1 @@
+*SEND*MESSAGE*FACEBOOK*==jv_pg_fb_send_message "$var_jv_pg_fb_main_receiver_id" "$var_jv_pg_fb_main_receiver_name" "This is a message with a picture sent as example by Jarvis" "plugins_installed/jarvis-fb-messenger/presentation.png"
