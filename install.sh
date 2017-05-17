@@ -20,9 +20,9 @@
 [[ -z $(which zlib1g-dev) ]] && sudo apt-get --yes --force-yes install zlib1g-dev
 
 # Install fbchat (needed for the jarvis-facebook messenger python script)
-sudo pip3 install fbchat
-#sudo pip install fbchat
-#sudo pip2 install fbchat
+sudo pip3 install fbchat==0.9.0
+#sudo pip install fbchat==0.9.0
+#sudo pip2 install fbchat==0.9.0
 
 # Copy latest version of "facebook messenger sender" python script
 wget -P script/ https://raw.githubusercontent.com/QuentinCG/Base-Scripts/master/OS_Independent/utils/fb_messenger_send.py
