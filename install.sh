@@ -19,6 +19,10 @@
 [[ -z $(which python3-dev) ]] && sudo apt-get --yes --force-yes install python3-dev
 [[ -z $(which zlib1g-dev) ]] && sudo apt-get --yes --force-yes install zlib1g-dev
 
+# Install beautifulsoup4 (should be installed by fbchat but do it before just in case)
+sudo pip3 install beautifulsoup4
+sudo pip3 install bs4
+
 # Install fbchat (needed for the jarvis-facebook messenger python script)
 sudo pip3 install fbchat==0.9.0
 #sudo pip install fbchat==0.9.0
