@@ -17,7 +17,7 @@ class JarvisFacebookMessengerServer(fbchat.Client):
 
     # Launch the Facebook messenger server
     try:
-      fbchat.Client.__init__(self, email, password, verbose)
+      fbchat.Client.__init__(self, email, password)
     except Exception:
       logging.error("Login failed, check email/password.")
       sys.exit(2)
@@ -71,15 +71,14 @@ class JarvisFacebookMessengerServer(fbchat.Client):
   def properExit(self, signum, frame):
     # Exit the class properly
     print("Stopping Jarvis Facebook Messenger server.")
-    self.stop_listening()
     self.logout()
     sys.exit(0)
 
-  def on_message(self, mid, author_id, author_name, message, metadata):
+  def onMessage(self, author_id, message, thread_id, thread_type, **kwargs):
     # If the author is not this class, send request to Jarvis...
     if str(author_id) != str(self.uid):
       # Mark message as delivered
-      self.markAsDelivered(author_id, mid)
+      self.markAsDelivered(author_id, thread_id)
 
       # Mark message as read
       self.markAsRead(author_id)
@@ -87,14 +86,14 @@ class JarvisFacebookMessengerServer(fbchat.Client):
       # Be sure that the author is allowed
       if not self.allowAll:
         if not (str(author_id) in self.allowedIdList):
-          self.send(author_id, "You don't have right to speak to Jarvis! (Your ID is {})".format(str(author_id)))
+          self.sendMessage("You don't have right to speak to Jarvis! (Your ID is {})".format(str(author_id)), thread_id=thread_id, thread_type=thread_type)
           logging.warning("Not allowed user '{}' tried to speak to Jarvis.".format(str(author_id)))
           return
 
       # Be sure to have a normalized string to send to Jarvis
       message = unicodedata.normalize('NFKD', message).encode('ascii','ignore').decode('utf-8')
 
-      logging.debug("Received message from '{}' (ID '{}'): '{}'.".format(str(author_name), str(author_id), str(message)))
+      logging.debug("Received message from '{}': '{}'.".format(str(author_id), str(message)))
 
       # Send request to Jarvis and receive answer
       response = self.executeOrder(str(message))
@@ -116,13 +115,13 @@ class JarvisFacebookMessengerServer(fbchat.Client):
 
         # Send Jarvis response to the sender
         if response_to_send != "":
-          self.send(author_id, str(response_to_send))
+          self.sendMessage(str(response_to_send), thread_id=thread_id, thread_type=thread_type)
       except ValueError:
-        self.send(author_id, "Can't parse Jarvis response: '{}'".format(str(response)))
+        self.sendMessage("Can't parse Jarvis response: '{}'".format(str(response)), thread_id=thread_id, thread_type=thread_type)
 
       # Send the ID of the caller to himself if requested
       if self.getId:
-        self.send(author_id, "Your ID is '{}'".format(str(author_id)))
+        self.sendMessage("Your ID is '{}'".format(str(author_id)), thread_id=thread_id, thread_type=thread_type)
 
 if __name__ == "__main__":
   # Define lambda function to convert string to bool
