@@ -27,4 +27,5 @@ sudo pip3 install bs4
 sudo pip3 install fbchat --upgrade
 
 # Copy latest version of "facebook messenger sender" python script
+rm script/fb_messenger_send.py
 wget -P script/ https://raw.githubusercontent.com/QuentinCG/Base-Scripts/master/OS_Independent/utils/fb_messenger_send.py
