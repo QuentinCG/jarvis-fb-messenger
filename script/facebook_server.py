@@ -5,7 +5,7 @@ import json # Read json input
 import os # Build path
 import sys # Use exit calls
 import signal # Catch kill
-from subprocess import check_output # Run shell commands
+from subprocess import check_output,CalledProcessError # Run shell commands
 import logging # Add logging
 import fbchat # Use facebook messenger library
 import unicodedata # Normalized string
