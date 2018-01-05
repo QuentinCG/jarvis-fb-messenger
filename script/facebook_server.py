@@ -111,7 +111,8 @@ class JarvisFacebookMessengerServer(fbchat.Client):
             if self.verbose_mode:
               response_to_send += "{}: {}".format(str(key), str(value))
             else:
-              response_to_send += str(value)
+              if str(key) == 'answer':
+                response_to_send += str(value)
 
         # Send Jarvis response to the sender
         if response_to_send != "":
