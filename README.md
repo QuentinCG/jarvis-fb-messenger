@@ -39,13 +39,28 @@ Jarvis: Message facebook envoyé à XXXX
 
 4) Configure the <a target="_blank" href="https://github.com/QuentinCG/jarvis-fb-messenger/blob/master/config.sh">configuration file</a> to match your requirements: You need to specify your facebook Jarvis email address, password and some other options (don't specify user IDs yet).
 
-5) Get Facebook IDs of people allowed to speak with Jarvis: Try to send a message from messenger to Jarvis: It will say that you don't have right to speak to him will give you your ID.
+5) Get Facebook IDs of people allowed to speak with Jarvis: Try to send a message from messenger to Jarvis (Jarvis must be launched): It will say that you don't have right to speak to him and will give you your ID.
 
 <img src="https://raw.githubusercontent.com/QuentinCG/jarvis-fb-messenger/master/example_no_right.png" width="250">
 
-6) Add those IDs in the <a target="_blank" href="https://github.com/QuentinCG/jarvis-fb-messenger/blob/master/config.sh">configuration file</a> to allow people to communicate with Jarvis.
+6) Add those IDs in `var_jv_pg_fb_allowed_people_ids` in the <a target="_blank" href="https://github.com/QuentinCG/jarvis-fb-messenger/blob/master/config.sh">configuration file</a> to allow people to communicate with Jarvis.
 
-7) Enjoy
+7) For more security once the plugin is working: Update the <a target="_blank" href="https://github.com/QuentinCG/jarvis-fb-messenger/blob/master/config.sh">configuration file</a> to set `var_jv_pg_fb_getId` and `var_jv_pg_fb_allow_control_to_all` to `False`
+
+8) Enjoy
+
+
+## Help
+
+If you have difficulties making this plugin work, here are some advice:
+ - Be sure Jarvis is launched else it will not answer your request.
+ - Be sure you followed the install properly (ALL points are important, check your <a target="_blank" href="https://github.com/QuentinCG/jarvis-fb-messenger/blob/master/config.sh">configuration file</a> if you have a doubt)
+ - Be sure your Facebook account is validated (and you clicked the link in the validation email sent by facebook)
+ - Try to discuss from one account to the other with web browsers to be absolutely sure they are working fine
+ - If this plugin worked and is not working anymore, it is maybe because Facebook locked your account because it thinks you are a bot. You'll have to follow their request to re-activate your account to prove you are not a bot (add a picture of you is the most common request from facebook)
+ - If this plugin worked and is not working anymore, it is possible the library used to communicate to facebook is obsolete. Try to uninstall and reinstall the plugin or run the `sudo pip3 install fbchat --upgrade` command
+ - Maybe your facebook Id is not valid ? Put the `var_jv_pg_fb_allow_control_to_all` key in the <a target="_blank" href="https://github.com/QuentinCG/jarvis-fb-messenger/blob/master/config.sh">configuration file</a> to `False` and try to communicate with Jarvis from your Web browser (Put it back to `True` once you discovered from where the issue came from else everyone will be able to discuss with your Jarvis).
+ - Check the Jarvis logs to better understand what is not working properly.
 
 
 ## Author
