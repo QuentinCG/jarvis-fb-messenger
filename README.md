@@ -61,6 +61,7 @@ If you have difficulties making this plugin work, here are some advice:
  - If this plugin worked and is not working anymore, it is possible the library used to communicate to facebook is obsolete. Try to uninstall and reinstall the plugin or run the `sudo pip3 install fbchat --upgrade` command
  - Maybe your facebook Id is not valid ? Put the `var_jv_pg_fb_allow_control_to_all` key in the <a target="_blank" href="https://github.com/QuentinCG/jarvis-fb-messenger/blob/master/config.sh">configuration file</a> to `False` and try to communicate with Jarvis from your Web browser (Put it back to `True` once you discovered from where the issue came from else everyone will be able to discuss with your Jarvis).
  - Check the Jarvis logs to better understand what is not working properly.
+ - If you don't see all the response when you do a request: You are not using Jarvis properly, be sure the response from a request to Jarvis is one and not multiple ones. To check, how Jarvis is working: `jarvis -j -m -v "My question that is not working with FB here"`.
 
 
 ## Author
