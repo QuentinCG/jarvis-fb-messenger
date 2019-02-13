@@ -50,6 +50,17 @@ Jarvis: Message facebook envoyé à XXXX
 8) Enjoy
 
 
+
+
+IMPORTANT NOTE:
+
+Facebook will more than likely flag your account as "bot". To prevent it, you should log in with your jarvis facebook account using a web browser at the same IP (and same device if possible) in order for facebook to "register" that you are not a bot.
+To do so, you can for example use chromium as web browser (X server must be activated if you are on SSH):
+```
+sudo apt install chromium chromium-l10n
+chromium
+```
+
 ## Help
 
 If you have difficulties making this plugin work, here are some advice:
